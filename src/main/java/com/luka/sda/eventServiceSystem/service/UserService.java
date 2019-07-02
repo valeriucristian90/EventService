@@ -1,6 +1,5 @@
 package com.luka.sda.eventServiceSystem.service;
 
-import com.luka.sda.eventServiceSystem.dto.CreateUserRequest;
 import com.luka.sda.eventServiceSystem.dto.UserTemplate;
 import com.luka.sda.eventServiceSystem.mapper.UserMapper;
 import com.luka.sda.eventServiceSystem.model.User;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService{
     private UserRepository userRepository;
     private UserMapper userMapper;
 
@@ -22,10 +21,9 @@ public class UserService {
     }
 
 
-    public UserTemplate save(CreateUserRequest request) {
-        User user = userMapper.toEntity(request);
-        User newUser = userRepository.save(user);
-        return userMapper.toDto(newUser);
+    public void save(UserTemplate template) {
+        User user = userMapper.toEntity(template);
+       userRepository.save(user);
     }
 
     public void deleteById(Long id) {
@@ -39,4 +37,10 @@ public class UserService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public User findByEmail (String email){
+        return userRepository.findByEmail(email);
+    }
+
+
 }

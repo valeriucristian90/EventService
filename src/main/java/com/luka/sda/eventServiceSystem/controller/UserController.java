@@ -1,6 +1,5 @@
 package com.luka.sda.eventServiceSystem.controller;
 
-import com.luka.sda.eventServiceSystem.dto.CreateUserRequest;
 import com.luka.sda.eventServiceSystem.dto.UserTemplate;
 import com.luka.sda.eventServiceSystem.mapper.UserMapper;
 import com.luka.sda.eventServiceSystem.model.User;
@@ -21,11 +20,6 @@ public class UserController {
     public UserController(UserService userService, UserMapper userMapper) {
         this.userService = userService;
         this.userMapper = userMapper;
-    }
-
-    @PostMapping
-    public void addUser(CreateUserRequest request) {
-        userService.save(request);
     }
 
     @GetMapping

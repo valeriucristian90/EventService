@@ -26,10 +26,10 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
         logger.info("Loading data...");
-        List<User> users = createUsers();
-        System.out.println("TOTO");
-        // TODO: ignore this im production
-        repository.saveAll(users);
+//        List<User> users = createUsers();
+//        System.out.println("TOTO");
+//        // TODO: ignore this im production
+//        repository.saveAll(users);
     }
 
     private List<User> createUsers() {

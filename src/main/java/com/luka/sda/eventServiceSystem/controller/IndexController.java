@@ -1,15 +1,23 @@
 package com.luka.sda.eventServiceSystem.controller;
 
 import com.luka.sda.eventServiceSystem.dto.UserTemplate;
-import com.luka.sda.eventServiceSystem.model.User;
+import com.luka.sda.eventServiceSystem.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class IndexController {
+
+
+    private UserService userService;
+
+    @Autowired
+    public IndexController(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping("/")
     public String getIndex (){
@@ -24,10 +32,13 @@ public class IndexController {
 
     @RequestMapping(value="/register", method= RequestMethod.POST)
     public String saveUser(UserTemplate ut){
-
-        System.out.println(ut);
+        userService.save(ut);
         return "index";
+    }
 
+    @RequestMapping("/login")
+    public String getLogin (){
+        return "login";
     }
 
 

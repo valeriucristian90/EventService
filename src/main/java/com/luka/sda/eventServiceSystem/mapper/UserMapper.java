@@ -1,6 +1,5 @@
 package com.luka.sda.eventServiceSystem.mapper;
 
-import com.luka.sda.eventServiceSystem.dto.CreateUserRequest;
 import com.luka.sda.eventServiceSystem.dto.UserTemplate;
 import com.luka.sda.eventServiceSystem.model.User;
 import org.springframework.stereotype.Component;
@@ -12,11 +11,11 @@ import java.util.stream.Collectors;
 @Component
 public class UserMapper {
 
-    public User toEntity(CreateUserRequest request) {
+    public User toEntity(UserTemplate template) {
         User user = new User();
-        user.setFirstName(request.getFirstName());
-        user.setEmail(request.getEmail());
-        user.setPassword(request.getPassword());
+        user.setFirstName(template.getFirstName());
+        user.setEmail(template.getEmail());
+        user.setPassword(template.getPassword());
         return user;
     }
 
