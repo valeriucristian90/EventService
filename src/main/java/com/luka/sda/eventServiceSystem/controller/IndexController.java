@@ -30,7 +30,7 @@ public class IndexController {
         return "register";
     }
 
-    @RequestMapping(value="/register", method= RequestMethod.POST)
+    @RequestMapping(value="register", method= RequestMethod.POST)
     public String saveUser(UserTemplate ut){
         userService.save(ut);
         return "index";
