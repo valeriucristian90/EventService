@@ -11,13 +11,15 @@ public class User {
             sequenceName = "user_seq", allocationSize = 1)
     private long id;
 
+
+
     @Column(name = "first_name")
     private String firstName;
 
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email")
+    @Column(unique = true, name = "email")
     private String email;
 
     @Column(name = "telephone")
