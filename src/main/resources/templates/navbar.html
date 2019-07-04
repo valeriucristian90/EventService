@@ -1,18 +1,72 @@
 !DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <nav th:fragment="superCoolNavbar">
-    <ul>
-        <li>
-            <a th:text="Register" th:href="@{/register}">Register</a>
-        </li>
-        <li>
-            <a th:text="LogIn" th:href="@{/login}">Log In</a>
-        </li>
-        <li>
-            <a th:text="NewEvent" th:href="@{/events}">New Event</a>
-        </li>
-        <li>
-            <a th:text="Home" th:href="@{/}">Home</a>
-        </li>
-    </ul>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- Links -->
+
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </form>
+        </div>
+        <!-- Collapsible content -->
+
+    </nav>
+    <!--/.Navbar-->
+
+<!--    <ul>-->
+<!--        <li>-->
+<!--            <a th:text="Register" th:href="@{/register}" class="btn btn-primary">Register</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a th:text="LogIn" th:href="@{/login}" class="btn btn-primary">Log In</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a th:text="NewEvent" th:href="@{/events}" class="btn btn-primary">New Event</a>-->
+<!--        </li>-->
+<!--        <li>-->
+<!--            <a th:text="Home" th:href="@{/}" class="btn btn-primary">Home</a>-->
+<!--        </li>-->
+<!--    </ul>-->
 </nav>
