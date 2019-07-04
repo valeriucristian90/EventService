@@ -2,20 +2,18 @@ package com.luka.sda.eventServiceSystem.dto;
 
 import java.util.Date;
 
-public class EventDto {
-
-    private long id;
+public class EventTemplate {
 
     private String name;
 //    private Date date;
     private int noParticipants;
 
-    public long getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 //
 //    public Date getDate() {
@@ -32,13 +30,5 @@ public class EventDto {
 
     public void setNoParticipants(int noParticipants) {
         this.noParticipants = noParticipants;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

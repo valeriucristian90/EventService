@@ -2,6 +2,8 @@ package com.luka.sda.eventServiceSystem.mapper;
 
 import com.luka.sda.eventServiceSystem.dto.UserTemplate;
 import com.luka.sda.eventServiceSystem.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,11 +13,14 @@ import java.util.stream.Collectors;
 @Component
 public class UserMapper {
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     public User toEntity(UserTemplate template) {
         User user = new User();
         user.setFirstName(template.getFirstName());
         user.setEmail(template.getEmail());
-        user.setPassword(template.getPassword());
+        user.setPassword(bCryptPasswordEncoder.encode(template.getPassword()));
         return user;
     }
 

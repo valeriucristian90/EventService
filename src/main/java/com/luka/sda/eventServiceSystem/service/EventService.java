@@ -1,6 +1,7 @@
 package com.luka.sda.eventServiceSystem.service;
 
 import com.luka.sda.eventServiceSystem.dto.EventDto;
+import com.luka.sda.eventServiceSystem.dto.EventTemplate;
 import com.luka.sda.eventServiceSystem.exception.EventNotFoundException;
 import com.luka.sda.eventServiceSystem.mapper.EventMapper;
 import com.luka.sda.eventServiceSystem.model.Event;
@@ -38,9 +39,8 @@ public class EventService {
 //        return eventOptional.get();
     }
 
-    public Event save(EventDto eventDto) {
-
-        Event newEvent = eventMapper.toEntity(eventDto);
+    public Event save(EventTemplate eventTemplate) {
+        Event newEvent = eventMapper.toEntity(eventTemplate);
         return eventRepository.save(newEvent);
     }
 

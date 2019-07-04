@@ -2,10 +2,10 @@ package com.luka.sda.eventServiceSystem.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Event {
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "event_seq_gen")
