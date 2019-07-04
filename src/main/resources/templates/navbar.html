@@ -1,0 +1,18 @@
+!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<nav th:fragment="superCoolNavbar">
+    <ul>
+        <li>
+            <a th:text="Register" th:href="@{/register}">Register</a>
+        </li>
+        <li>
+            <a th:text="LogIn" th:href="@{/login}">Log In</a>
+        </li>
+        <li>
+            <a th:text="NewEvent" th:href="@{/events}">New Event</a>
+        </li>
+        <li>
+            <a th:text="Home" th:href="@{/}">Home</a>
+        </li>
+    </ul>
+</nav>
