@@ -4,3 +4,4 @@ target/
 *.iws
 *.iml
 .idea
+src/main/resources/application.properties
