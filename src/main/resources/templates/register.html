@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="fragments/common-header :: common-header">
+    <nav th:replace="navbar :: superCoolNavbar"></nav>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <title>Register</title>
 </head>
 <body>
+
 <form th:action="@{/register}" th:object="${user}" method="POST" enctype="utf8">
 
     <div class="row">
@@ -22,49 +25,74 @@
                         You have been logged out.
                     </div>
                 </div>
-    <div class="form-group">
-        <label for="username">Username</label>:
-        <input type="email"
-               id="username"
-               name="username"
-               class="form-control"
-               autofocus="autofocus"
-               placeholder="Username"/>
+            </form>
 
-    <div>
-        <label th:text="FirstName">first</label>
-        <input th:field="*{firstName}"/>
+            <div class="form-group">
+                <label th:text="First+' '+Name"> </label>:
+                <input type="firstName"
+                       id="firstName"
+                       name="firstName"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="First Name"/>
+            </div>
+
+            <div class="form-group">
+                <label th:text="Last+' '+Name"> </label>:
+                <input type="lastName"
+                       id="lastName"
+                       name="lastName"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="Last Name"/>
+            </div>
+
+
+            <div class="form-group">
+                <label for="password">Password</label>:
+                <input type="password"
+                       id="password"
+                       name="password"
+                       class="form-control"
+                       placeholder="Password"/>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>:
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="Email"/>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit"
+                               name="submit"
+                               id="submit"
+                               class="form-control btn btn-info"
+                               value="Register"/>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <span>Already have an account? <a href="/" th:href="@{/login}">Login here</a></span>
+            </div>
+
+
+
+
+        </div>
 
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>:
-        <input type="password"
-               id="password"
-               name="password"
-               class="form-control"
-               placeholder="Password"/>
-    </div>
-    <div class="form-group">
-        <label for="email">E-mail</label>:
-        <input type="email"
-               id="email"
-               name="email"
-               class="form-control"
-               placeholder="Email"/>
-    </div>
-    <div class="form-group">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <input type="register"
-                       name="register-submit"
-                       id="register-submit"
-                       class="form-control btn btn-info"
-                       value="Register"/>
 
-
-    <button type="submit" th:text="Submit">submit</button>
 </form>
 
-<a th:href="@{/login.html}" th:text="Login">login</a>
+
+
 </body>
 </html>

@@ -1,18 +1,117 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
+<!--<form th:action="@{/newEvent}" th:object="${event}" method="POST" enctype="utf8">-->
+<!--<div>-->
+<!--<label th:text="Name">name</label>-->
+<!--<input type="text" th:field="*{name}"/>-->
+<!--</div>-->
+<!--<div>-->
+<!--<label th:text="NoParticipants">noParticipants</label>-->
+<!--<input type="text" th:field="*{NoParticipants}"/>-->
+<!--</div>-->
+
+<!--<button type="submit" th:text="Submit">submit</button>-->
+<!--</form>-->
+
+<head th:replace="fragments/common-header :: common-header">
+    <nav th:replace="navbar :: superCoolNavbar"></nav>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>New event</title>
+</head>
+<body>
+
 <form th:action="@{/newEvent}" th:object="${event}" method="POST" enctype="utf8">
-    <div>
-        <label th:text="Name">name</label>
-        <input type="text" th:field="*{name}"/>
-    </div>
-    <div>
-        <label th:text="NoParticipants">noParticipants</label>
-        <input type="text" th:field="*{NoParticipants}"/>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div id="foto" style="text-align: center;">
+                <img th:src="@{/img/event/images.jpeg}" alt="foto1" >
+            </div>
+            <h1 align="center">New event</h1>
+            <form th:action="@{/newEvent}" method="post">
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">
+                        Invalid event.
+                    </div>
+                </div>
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">
+                        You have been logged out.
+                    </div>
+                </div>
+            </form>
+
+            <div style="clear:both;"></div>
+
+            <div class="form-group">
+                <label th:text="Event+' '+Name"> </label>:
+                <input type="name"
+                       id="name"
+                       name="name"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="Event Name"/>
+            </div>
+
+            <div class="form-group">
+                <label th:text="Number+' '+Of+' '+Participants"> </label>:
+                <input type="noParticipants"
+                       id="noParticipants"
+                       name="noParticipants"
+                       class="form-control"
+                       autofocus="autofocus"
+                       placeholder="No participants"/>
+            </div>
+
+
+            <!--<div class="form-group">-->
+            <!--<label for="password">Password</label>:-->
+            <!--<input type="password"-->
+            <!--id="password"-->
+            <!--name="password"-->
+            <!--class="form-control"-->
+            <!--placeholder="Password"/>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+            <!--<label for="email">E-mail</label>:-->
+            <!--<input type="email"-->
+            <!--id="email"-->
+            <!--name="email"-->
+            <!--class="form-control"-->
+            <!--placeholder="Email"/>-->
+            <!--</div>-->
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <input type="submit"
+                               name="submit"
+                               id="submit"
+                               class="form-control btn btn-info"
+                               value="Submit"/>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--<div class="form-group">-->
+            <!--<span>Already have an account? <a href="/" th:href="@{/login}">Login here</a></span>-->
+            <!--</div>-->
+
+
+        </div>
+
     </div>
 
-    <button type="submit" th:text="Submit">submit</button>
 </form>
 
-<h1>new event</h1>
 
+</body>
+
+</html>
+
+<!--<h1>new event</h1>-->

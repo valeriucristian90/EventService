@@ -19,6 +19,7 @@ public class UserMapper {
     public User toEntity(UserTemplate template) {
         User user = new User();
         user.setFirstName(template.getFirstName());
+        user.setLastName(template.getLastName());
         user.setEmail(template.getEmail());
         user.setPassword(bCryptPasswordEncoder.encode(template.getPassword()));
         return user;
@@ -48,6 +49,7 @@ public class UserMapper {
         UserTemplate userTemplate = new UserTemplate();
         userTemplate.setId(user.getId());
         userTemplate.setFirstName(user.getFirstName());
+        userTemplate.setLastName(user.getLastName());
         userTemplate.setEmail(user.getEmail());
         return userTemplate;
     }

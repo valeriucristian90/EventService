@@ -3,7 +3,7 @@
 
 <nav th:fragment="superCoolNavbar" class="navbar navbar-expand-lg navbar-dark primary-color">
 
-    <a th:text="Home" th:href="@{/index}" class="btn btn-primary">LukaProject</a>
+    <a th:text="Home" th:href="@{/}" class="btn btn-primary">LukaProject</a>
 
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -12,10 +12,10 @@
             </a>
         </li>
         <li class="nav-item">
-            <a th:text="LogIn" th:href="@{/login}" class="btn btn-primary">Log In</a>
+            <a th:text="Log+' '+In" th:href="@{/login}" class="btn btn-primary">Log In</a>
         </li>
         <li class="nav-item">
-            <a th:text="NewEvent" th:href="@{/events}" class="btn btn-primary">New Event</a>
+            <a th:text="New+' '+Event" th:href="@{/newEvent}" class="btn btn-primary">New Event</a>
         </li>
 
         <!-- Dropdown -->
@@ -23,9 +23,9 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#">Category</a>
+                <a class="dropdown-item" href="#">Services</a>
+                <a class="dropdown-item" href="#">Location</a>
             </div>
         </li>
 

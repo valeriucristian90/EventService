@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/common-header :: common-header"></head>
-<body>
+<body th:style="'background: url(/img/event/submit-event.jpg) no-repeat center center fixed; background-size: width=1700px; high=1500px;'">
 <nav th:replace="navbar :: superCoolNavbar"></nav>
 
 
 <div>
-    <span> <a href="/" th:href="@{/newEvent}" th:text="AddEvent">dummyEvent</a></span>
-    <img th:src="@{/img/sample.jpg}"/>
+    <!--<span> <a href="/" th:href="@{/newEvent}" th:text="AddEvent">dummyEvent</a></span>-->
+    <!--<img th:src="@{/img/event/submit-event.jpg}"/>-->
 </div>
 
 </body>
