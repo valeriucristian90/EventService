@@ -7,6 +7,7 @@ import com.luka.sda.eventServiceSystem.model.User;
 import com.luka.sda.eventServiceSystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -17,7 +18,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-@Service
+@Service("userService")
 public class UserService implements UserDetailsService {
     private UserRepository userRepository;
     private UserMapper userMapper;
@@ -60,5 +61,4 @@ public class UserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getEmail(),
                 user.getPassword(), Arrays.asList(new SimpleGrantedAuthority("ROLE_USER")));
     }
-
 }

@@ -43,5 +43,11 @@ public class IndexController {
         return "login";
     }
 
+//    @RequestMapping(value = "login", method = RequestMethod.GET)
+//    public String loginUser(String email){
+//        userService.loadUserByUsername(email);
+//        return "index";
+//    }
+
 
 }

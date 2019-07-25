@@ -19,34 +19,34 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h1 align="center">Login</h1>
-            <form th:action="@{/login}" method="get">
+            <form th:action="@{/login}" method="post">
+                <fieldset>
                 <div th:if="${param.error}">
-                    <div class="alert alert-danger">
                         Invalid username or password.
                     </div>
-                </div>
                 <div th:if="${param.logout}">
-                    <div class="alert alert-info">
                         You have been logged out.
                     </div>
+                    <div class="alert alert-danger">
                 </div>
                 <div class="form-group">
-                    <label th:text="E-mail"> </label>:
+                    <label th:text="E-mail" for="username">dummyEmail</label>
                     <input type="email"
-                           id="email"
-                           name="email"
+                           id="username"
+                           name="username"
                            class="form-control"
                            autofocus="autofocus"
                            placeholder="E-mail"/>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>:
+                    <label th:text="password" for="password">Password</label>
                     <input type="password"
                            id="password"
                            name="password"
                            class="form-control"
                            placeholder="Password"/>
                 </div>
+                </fieldset>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
@@ -62,6 +62,42 @@
                     <span><b> New user? </b><a href="/" th:href="@{/register}"><b>Register here</b></a></span>
                 </div>
             </form>
+            <!--<form th:action="@{/login}" method="post" class="text-center">-->
+                <!--<fieldset>-->
+                    <!--<div th:if="${param.error}">Invalid username and password.</div>-->
+                    <!--<div th:if="${param.logout}">You have been logged out.</div>-->
+                    <!--<div class="alert alert-danger">-->
+                        <!--<label th:text="#{email.label}" for="username">dummyEmail</label>-->
+                        <!--<input type="email" id="username" name="username" class="form-group">-->
+                    <!--</div>-->
+                    <!--<div class="md-form">-->
+                        <!--<label th:text="#{password.label}" for="password">dummyPassword</label>-->
+                        <!--<input type="password" id="password" name="password" class="form-control">-->
+                    <!--</div>-->
+                <!--</fieldset>-->
+                <!--<div class="d-flex justify-content-around">-->
+                    <!--<div>-->
+                        <!--&lt;!&ndash; Remember me &ndash;&gt;-->
+                        <!--<div class="form-check">-->
+                            <!--<input type="checkbox" class="form-check-input" id="materialLoginFormRemember">-->
+                            <!--<label th:text="#{remember.me.label}" class="form-check-label"-->
+                                   <!--for="materialLoginFormRemember">dummyRememberMe</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div>-->
+                        <!--&lt;!&ndash; Forgot password &ndash;&gt;-->
+                        <!--<a th:text="#{forgot.password.label}" th:href="@{#}" href="">dummyForgotPassword</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; Sign in button &ndash;&gt;-->
+                <!--<button th:text="#{sign.in.label}"-->
+                        <!--class="form-control btn btn-info"-->
+                        <!--type="submit">dummySignIn-->
+                <!--</button>-->
+                <!--&lt;!&ndash; Register &ndash;&gt;-->
+                <!--<p>Not a member? <a th:href="@{/register}" th:text="#{register.label}" href="">dummyRegister</a>-->
+                <!--</p>-->
+            <!--</form>-->
         </div>
     </div>
 
